@@ -49,11 +49,11 @@ namespace SchoolManagementSystemAPI.Controllers
 
         // POST api/<StudentController>
         [HttpPost]
-        public async Task<IActionResult> Post(Student student)
+        public  IActionResult Post(Student student)
         {
             try
             {
-               await _studentsvc.AddStudent(student);
+                _studentsvc.AddStudent(student);
             }
             catch(Exception ex)
             {

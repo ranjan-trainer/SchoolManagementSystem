@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using SchoolManagementSystemRepositoryLayer;
+
 namespace SchoolManagementSystemAPI
 {
     public class Program
@@ -9,6 +12,7 @@ namespace SchoolManagementSystemAPI
             // Add services to the container.
 
             builder.Services.AddControllers();
+            builder.Services.AddDbContext<SMSContext>(x => x.UseSqlServer("Server=DOTNET-01\\USER101;Database=SchoolManagementSystem;Trusted_Connection=True;"));
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
